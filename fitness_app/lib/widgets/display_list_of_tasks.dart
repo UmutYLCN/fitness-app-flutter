@@ -61,13 +61,13 @@ class DisplayListOfTasks extends ConsumerWidget {
                     onCompleted: (value) async {
                       await ref
                           .read(exercisesProvider.notifier)
-                          .updateTask(ex)
+                          .updateExercise(ex)
                           .then((value) {
                         AppAlerts.displaySnackbar(
                           context,
                           ex.isCompleted
-                              ? 'Task incompleted'
-                              : 'Task completed',
+                              ? 'Exercise incompleted'
+                              : 'Exercise completed',
                         );
                       });
                     },

@@ -58,6 +58,10 @@ class HomePage extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    DisplayListOfTasks(
+                      exercises: inCompletedExercises,
+                      isCompletedExercises: false,
+                    ),
                     const Gap(20),
                     Text(
                       'Completed',

@@ -7,7 +7,7 @@ class AppTheme {
   const AppTheme._();
 
   static final light = FlexThemeData.light(
-    scheme: FlexScheme.bahamaBlue,
+    scheme: FlexScheme.barossa,
     surfaceMode: FlexSurfaceMode.highScaffoldLowSurfacesVariantDialog,
     blendLevel: 40,
     appBarStyle: FlexAppBarStyle.primary,
