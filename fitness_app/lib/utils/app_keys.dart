@@ -5,4 +5,5 @@ class AppKeys {
   const AppKeys._();
   static const String isDarkMode = 'isDarkMode';
   static const String dbTable = 'Exercises';
+  static const String dbWeightTable = 'ExercisesWeight';
 }

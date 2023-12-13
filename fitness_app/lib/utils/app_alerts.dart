@@ -1,5 +1,7 @@
+import 'package:fitness_app/data/data.dart';
 import 'package:fitness_app/data/models/exercise.dart';
 import 'package:fitness_app/providers/exercise/exercise_provider.dart';
+import 'package:fitness_app/providers/exercise/exercise_weight_provider.dart';
 import 'package:fitness_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -51,6 +53,49 @@ class AppAlerts {
 
     AlertDialog alert = AlertDialog(
       title: const Text('Are you sure you want to delete this Exercise?'),
+      actions: [
+        deleteButton,
+        cancelButton,
+      ],
+    );
+
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  static Future<void> showAlertDeleteWeightDialog({
+    required BuildContext context,
+    required WidgetRef ref,
+    required ExerciseWeight exercise,
+  }) async {
+    Widget cancelButton = TextButton(
+      child: const Text('NO'),
+      onPressed: () => context.pop(),
+    );
+    Widget deleteButton = TextButton(
+      onPressed: () async {
+        await ref
+            .read(exercisesWeightProvider.notifier)
+            .deleteExercise(exercise)
+            .then(
+          (value) {
+            displaySnackbar(
+              context,
+              'ExerciseWeight deleted successfully',
+            );
+            context.pop();
+          },
+        );
+      },
+      child: const Text('YES'),
+    );
+
+    AlertDialog alert = AlertDialog(
+      title: const Text('Are you sure you want to delete this ExerciseWeight?'),
       actions: [
         deleteButton,
         cancelButton,

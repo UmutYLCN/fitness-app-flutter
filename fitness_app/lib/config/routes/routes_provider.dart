@@ -9,7 +9,7 @@ final navigationKey = GlobalKey<NavigatorState>();
 final routesProvider = Provider<GoRouter>(
   (ref) {
     return GoRouter(
-      initialLocation: RouteLocation.home,
+      initialLocation: RouteLocation.exerciseWeight,
       navigatorKey: navigationKey,
       routes: appRoutes,
     );

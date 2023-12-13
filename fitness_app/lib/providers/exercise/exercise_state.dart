@@ -2,23 +2,23 @@ import 'package:equatable/equatable.dart';
 import 'package:fitness_app/data/models/exercise.dart';
 
 class ExerciseState extends Equatable {
-  final List<Exercise> Exercises;
+  final List<Exercise> exercises;
 
   const ExerciseState({
-    required this.Exercises,
+    required this.exercises,
   });
   const ExerciseState.initial({
-    this.Exercises = const [],
+    this.exercises = const [],
   });
 
   ExerciseState copyWith({
     List<Exercise>? Exercises,
   }) {
     return ExerciseState(
-      Exercises: Exercises ?? this.Exercises,
+      exercises: Exercises ?? this.exercises,
     );
   }
 
   @override
-  List<Object> get props => [Exercises];
+  List<Object> get props => [exercises];
 }

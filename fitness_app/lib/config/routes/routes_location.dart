@@ -6,4 +6,6 @@ class RouteLocation {
 
   static String get home => '/home';
   static String get createExercise => '/createExercise';
+  static String get exerciseWeight => '/exerciseWeight';
+  static String get createExerciseWight => '/createExerciseWeight';
 }
