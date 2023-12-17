@@ -30,37 +30,18 @@ class ExerciseWeightDetails extends StatelessWidget {
             exerciseWeight.title,
             style: style.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 30,
             ),
           ),
-          Text(exerciseWeight.kg, style: style.titleMedium),
-          const Gap(16),
-          Visibility(
-            visible: true,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Task to be completed on '),
-                Text(exerciseWeight.date),
-                Icon(
-                  Icons.check_box,
-                  color: exerciseWeight.category.color,
-                ),
-              ],
-            ),
+          Text(
+            '${exerciseWeight.kg} Kg',
+            style: style.titleMedium
+                ?.copyWith(fontWeight: FontWeight.normal, fontSize: 25),
           ),
           const Gap(16),
           Divider(
             color: exerciseWeight.category.color,
             thickness: 1.5,
-          ),
-          const Gap(16),
-          Text(
-            exerciseWeight.note.isEmpty
-                ? 'There is no additional note for this task'
-                : exerciseWeight.note,
-            style: context.textTheme.titleMedium,
-            textAlign: TextAlign.center,
           ),
         ],
       ),

@@ -82,6 +82,18 @@ class ExerciseWeightDatasource {
     });
   }
 
+  Future<int> updateKg(ExerciseWeight exerciseWeight, String newKg) async {
+    final db = await database;
+    return db.transaction((txn) async {
+      return await txn.update(
+        AppKeys.dbWeightTable,
+        {'${ExerciseWeightKeys.kg}': newKg},
+        where: 'id = ?',
+        whereArgs: [exerciseWeight.id],
+      );
+    });
+  }
+
   Future<int> deleteExerciseWeight(ExerciseWeight exerciseWeight) async {
     final db = await database;
     return db.transaction(

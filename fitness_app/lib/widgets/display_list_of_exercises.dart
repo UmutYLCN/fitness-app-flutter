@@ -19,7 +19,7 @@ class DisplayListOfExercise extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final deviceSize = context.deviceSize;
     final height = deviceSize.height * 0.65;
-    final emptyTasksAlert = 'There is no added exercise!';
+    const emptyTasksAlert = 'There is no added exercise!';
 
     return CommonContainer(
       height: height,
